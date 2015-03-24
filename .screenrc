@@ -1,0 +1,46 @@
+startup_message off
+
+# terminfo and termcap for nice 256 color terminal
+# allow bold colors - necessary for some reason
+attrcolor b ".I"
+
+# Window list at the bottom.
+#hardstatus alwayslastline
+#hardstatus string "%-w%{= BW}%50>%n %t%{-}%+w%<"
+hardstatus on
+hardstatus alwayslastline '%{= kw}%-w%{= m}%n %t%{-}%+w %-= %1` %{B}%d %D %{c}%c'
+
+# Don't block command output if the terminal stops responding
+nonblock on
+
+# Allow editors etc. to restore display on exit
+# rather than leaving existing text in place
+altscreen on
+
+# Enable 256-color mode when screen is started with TERM=xterm-256color
+# Taken from: http://frexx.de/xterm-256-notes/
+#
+# Note that TERM != "xterm-256color" within a screen window. Rather it is
+# "screen" or "screen-bce"
+# 
+
+# tell screen how to set colors. AB = background, AF=foreground
+#termcapinfo xterm-256color 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+
+# Default Shell
+shell "/usr/local/bin/fish"
+
+# Scrolling
+termcapinfo xterm* ti@:te@
+defscrollback 100000
+
+chdir $HOME
+screen -t 'Misc'
+screen -t 'Misc'
+chdir $HOME/git/go-workspace/src
+screen -t 'Dev'
+chdir $HOME/git
+screen -t 'Dev'
+chdir $HOME
+screen -t 'Mutt'
+screen -t 'Weechat'
