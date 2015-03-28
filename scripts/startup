@@ -1,0 +1,49 @@
+#!/bin/sh
+
+# Gnome keyring daemon
+# exec --no-startup-id /usr/lib/gnome-settings-daemon/gnome-settings-daemon &
+# gnome-keyring-daemon &
+
+# Desktop environment
+gnome-screensaver &
+nm-applet &
+xautolock -time 5 -locker "gnome-screensaver-command --lock" &
+gnome-settings-daemon &
+
+# Battery warning script
+$HOME/bin/battery_warning &
+
+# Scim input
+#ibus-daemon -drx &
+#export GTK_IM_MODULE=ibus &
+#export XMODIFIERS=@im=ibus &
+#export QT_IM_MODULE=ibus &
+
+# Set screen res
+#$HOME/bin/xrandr_1920x1200 &
+
+# Fix screen tearing issue while scrolling in FF/Chromium
+compton &
+
+# Desktop wallpaper
+feh --bg-scale $HOME/Pictures/color14.png &
+
+# Start firefox in workspace 1
+i3-msg 'workspace 1; exec firefox' &
+
+# Start terminal in workspace 2
+i3-msg 'workspace 2; exec terminator -x screen' &
+
+# Start thunderbird in workspace 4
+i3-msg 'workspace 4; exec thunderbird' &
+
+# Start Webapps in workspace 3
+sleep 3
+i3-msg 'workspace 3; exec firefox -new-window http://app.mysms.com' &
+sleep 3
+i3-msg 'workspace 3; exec firefox -new-tab http://mirra.slack.com' &
+#i3-msg 'workspace 3; exec firefox -new-tab http://calendar.google.com' &
+#i3-msg 'workspace 3; exec nw $HOME/Applications/NodeWebkit/slack/slack.zip.nw' &
+
+# Remap capslock to ctrl
+$HOME/bin/capslock
