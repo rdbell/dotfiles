@@ -7,6 +7,9 @@ set -x BROWSER open
 # Add Scripts folder to path
 set -x PATH $PATH $HOME/bin
 
+# Add go bin folder to path
+set -x PATH $PATH $HOME/git/go/bin
+
 # Go
 set -x GOPATH $HOME/git/go-workspace
 set -x PATH $PATH $GOPATH/bin
