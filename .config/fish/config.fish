@@ -7,10 +7,13 @@ set -x BROWSER open
 set -x DYLD_FORCE_FLAT_NAMESPACE 1
 
 # Add Scripts folder to path
-set -x PATH $PATH /Users/ronald/bin
+set -x PATH $PATH $HOME/bin
+
+# Add go bin folder to path
+set -x PATH $PATH $HOME/git/go/bin
 
 # Go
-set -x GOPATH /Users/ronald/git/go-workspace
+set -x GOPATH $HOME/git/go-workspace
 set -x PATH $PATH $GOPATH/bin
 
 # Adobe Flex
@@ -22,7 +25,7 @@ set -x PORT 8080
 
 # Docker
 set -x DOCKER_HOST tcp://192.168.59.103:2376
-set -x DOCKER_CERT_PATH /Users/ronald/.boot2docker/certs/boot2docker-vm
+set -x DOCKER_CERT_PATH $HOME/.boot2docker/certs/boot2docker-vm
 set -x DOCKER_TLS_VERIFY 1
 
 # Gnome keyring ssh

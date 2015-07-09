@@ -25,7 +25,10 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'yosssi/vim-ace'
 Plugin 'jeroenbourgois/vim-actionscript'
 Plugin 'Valloric/YouCompleteMe'
-" Plugin 'bling/vim-airline'
+Plugin 'wookiehangover/jshint.vim'
+Plugin 'maksimr/vim-jsbeautify'
+Plugin 'einars/js-beautify'
+
 
 call vundle#end()
 
@@ -46,6 +49,7 @@ let g:indentLine_color_term = 57
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 
 " Enable line numbers
+set relativenumber
 set number
 
 " Change the color of highlighted matching entities to be more readabale
@@ -77,13 +81,13 @@ let g:ctrlp_prompt_mappings = {
     \ }
 
 " Folds
-" set foldmethod=syntax
-" set foldnestmax=10
-" set nofoldenable
-" set foldlevel=0
-" set foldlevelstart=0
-" nnoremap <space> za
-" vnoremap <space> zf
+set foldmethod=syntax
+set foldnestmax=10
+set nofoldenable
+set foldlevel=0
+set foldlevelstart=0
+"nnoremap <space> za
+"vnoremap <space> zf
 
 " Go specific settings
 let g:go_fmt_command = "goimports"
@@ -91,6 +95,8 @@ let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 map <C-g> :GoRun<CR>
+
+map <C-j> :!node ./app.js<CR>
 
 " Automatically open NERDTree tabs on start
 let g:nerdtree_tabs_open_on_console_startup = 1
@@ -100,3 +106,5 @@ let g:nerdtree_tabs_focus_on_files = 1
 set synmaxcol=480
 
 au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
+
+au BufWrite *.js :call JsBeautify()
