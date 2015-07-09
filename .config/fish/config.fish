@@ -4,6 +4,8 @@ set -x BROWSER open
 # python2
 # alias python=python2
 
+set -x DYLD_FORCE_FLAT_NAMESPACE 1
+
 # Add Scripts folder to path
 set -x PATH $PATH /Users/ronald/bin
 

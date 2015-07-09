@@ -42,6 +42,9 @@ set softtabstop=4
 let g:indentLine_char = '┆'
 let g:indentLine_color_term = 57 
 
+" Set tabwidth to 4 for Ruby files
+autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
+
 " Enable line numbers
 set number
 
