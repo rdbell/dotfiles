@@ -17,7 +17,11 @@ set -x GOPATH $HOME/git/go-workspace
 set -x PATH $PATH $GOPATH/bin
 
 # Adobe Flex
-set -x PATH $PATH /Applications/Adobe\ Flash\ Builder\ 4.7/sdks/4.6.0/bin
+set -x PATH $PATH /Applications/Adobe\ Flash\ Builder\ 4.7/sdks/4.6.0/bin # OS X
+set -x PATH $PATH $HOME/flex/bin # Ubuntu
+
+set -x JAVA_HOME /usr/lib/jvm/default-java
+set -x PLAYERGLOBAL_HOME $HOME/playerglobal
 
 # Mirra Development
 set -x MIRRA_DEVELOPMENT true
@@ -44,8 +48,13 @@ set __fish_git_prompt_char_stashstate '↩'
 set __fish_git_prompt_char_upstream_ahead '↑'
 set __fish_git_prompt_char_upstream_behind '↓'
 
+set user (whoami)
+
 function fish_prompt
   set last_status $status
+
+  set_color normal 
+  printf '%s  ' $user
 
   set_color green 
   printf '%s' (prompt_pwd)
