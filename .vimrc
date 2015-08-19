@@ -25,8 +25,8 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'yosssi/vim-ace'
 Plugin 'jeroenbourgois/vim-actionscript'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'wookiehangover/jshint.vim'
-Plugin 'maksimr/vim-jsbeautify'
+" Plugin 'wookiehangover/jshint.vim'
+" Plugin 'maksimr/vim-jsbeautify'
 Plugin 'einars/js-beautify'
 Plugin 'OmniSharp/omnisharp-vim'
 
@@ -35,6 +35,9 @@ call vundle#end()
 
 " Enable JSHint
 let g:syntastic_javascript_checkers = ['jshint']
+let JSHintUpdateWriteOnly=1
+
+let g:ycm_register_as_syntastic_checker = 0
 
 " Now we can turn our filetype functionality back on
 filetype plugin indent on
