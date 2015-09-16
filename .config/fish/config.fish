@@ -18,6 +18,7 @@ set -x PATH $PATH $GOPATH/bin
 
 # Adobe Flex
 set -x PATH $PATH /Applications/Adobe\ Flash\ Builder\ 4.7/sdks/4.6.0/bin # OS X
+set -x PATH $PATH $HOME/Library/flex_sdk_4.6/bin # OS X
 set -x PATH $PATH $HOME/flex/bin # Ubuntu
 
 set -x JAVA_HOME /usr/lib/jvm/default-java
@@ -29,7 +30,8 @@ set -x PORT 8080
 
 # Docker
 set -x DOCKER_HOST tcp://192.168.59.103:2376
-set -x DOCKER_CERT_PATH $HOME/.boot2docker/certs/boot2docker-vm
+set -x DOCKER_MACHINE_NAME default
+set -x DOCKER_CERT_PATH $HOME/.docker/machine/machines/default
 set -x DOCKER_TLS_VERIFY 1
 
 # Gnome keyring ssh
