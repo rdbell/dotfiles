@@ -1,0 +1,4 @@
+map <C-h> :tabp<CR>
+map <C-l> :tabn<CR>
+
+:set hintchars=hjklasdfgyuiopqwertnmzxcvb
