@@ -26,8 +26,8 @@ Plugin 'yosssi/vim-ace'
 Plugin 'jeroenbourgois/vim-actionscript'
 Plugin 'Valloric/YouCompleteMe'
 " Plugin 'wookiehangover/jshint.vim'
-" Plugin 'maksimr/vim-jsbeautify'
-Plugin 'einars/js-beautify'
+Plugin 'maksimr/vim-jsbeautify'
+" Plugin 'einars/js-beautify'
 Plugin 'OmniSharp/omnisharp-vim'
 
 
