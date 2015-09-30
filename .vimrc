@@ -10,8 +10,8 @@ call vundle#begin()
 Plugin 'gmarik/vundle.vim'
 
 Plugin 'tpope/vim-sensible'
-"Plugin 'scrooloose/nerdtree'
-"Plugin 'jistr/vim-nerdtree-tabs' 
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs' 
 Plugin 'rking/ag.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
@@ -29,7 +29,6 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'maksimr/vim-jsbeautify'
 " Plugin 'einars/js-beautify'
 Plugin 'OmniSharp/omnisharp-vim'
-
 
 call vundle#end()
 
@@ -114,6 +113,8 @@ set synmaxcol=480
 au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
 
 au BufWrite *.js :call JsBeautify()
+
+let g:gitgutter_max_signs = 4000
 
 " OmniSharp won't work without this setting
 filetype plugin on
