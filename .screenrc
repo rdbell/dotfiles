@@ -28,7 +28,7 @@ altscreen on
 #termcapinfo xterm-256color 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
 
 # Default Shell
-shell "/usr/local/bin/fish"
+shell "fish"
 
 # Scrolling
 termcapinfo xterm* ti@:te@

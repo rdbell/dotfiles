@@ -29,6 +29,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'maksimr/vim-jsbeautify'
 " Plugin 'einars/js-beautify'
 Plugin 'OmniSharp/omnisharp-vim'
+Plugin 'neilagabriel/vim-geeknote'
 
 call vundle#end()
 
@@ -226,3 +227,5 @@ nnoremap <leader>sp :OmniSharpStopServer<cr>
 nnoremap <leader>th :OmniSharpHighlightTypes<cr>
 "Don't ask to save when changing buffers (i.e. when jumping to a type definition)
 set hidden
+
+set shell=/bin/bash
