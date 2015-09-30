@@ -1,3 +1,5 @@
+set fish_greeting ""
+
 set -x EDITOR vim
 set -x BROWSER open
 
@@ -67,3 +69,5 @@ function fish_prompt
   printf ': '
 
 end
+
+fish_vi_mode
