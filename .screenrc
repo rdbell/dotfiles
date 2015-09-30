@@ -34,13 +34,10 @@ shell "fish"
 termcapinfo xterm* ti@:te@
 defscrollback 100000
 
-chdir $HOME
-screen -t 'Misc'
-screen -t 'Misc'
 chdir $HOME/git/go-workspace/src
 screen -t 'Dev'
 chdir $HOME/git
 screen -t 'Dev'
 chdir $HOME
-screen -t 'Mutt'
-screen -t 'Weechat'
+screen -t 'Misc'
+screen -t 'Misc'
