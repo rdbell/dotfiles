@@ -54,6 +54,9 @@ let g:indentLine_color_term = 57
 " Set tabwidth to 4 for Ruby files
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 
+" Set tabwidth to 2 for Jade files
+autocmd FileType jade setlocal sw=2 ts=2 sts=2
+
 " Enable line numbers
 set relativenumber
 set number
@@ -229,3 +232,4 @@ nnoremap <leader>th :OmniSharpHighlightTypes<cr>
 set hidden
 
 set shell=/bin/bash
+
