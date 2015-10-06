@@ -2,3 +2,6 @@ map <C-h> :tabp<CR>
 map <C-l> :tabn<CR>
 
 :set hintchars=hjklasdfgyuiopqwertnmzxcvb
+
+" Ctrl-a
+inoremap <C-a> <C-Home><C-S-End>"
