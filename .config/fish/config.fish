@@ -69,5 +69,3 @@ function fish_prompt
   printf ': '
 
 end
-
-fish_vi_mode
