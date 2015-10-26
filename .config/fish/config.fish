@@ -27,6 +27,7 @@ set -x JAVA_HOME /usr/lib/jvm/default-java
 set -x PLAYERGLOBAL_HOME $HOME/playerglobal
 
 # Mirra Development
+set -x MIRRA_DEV_MONGO_URL mongodb://localhost:9000
 set -x MIRRA_DEVELOPMENT true
 set -x PORT 8080
 
