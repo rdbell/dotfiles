@@ -14,6 +14,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'rking/ag.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'endel/actionscript.vim'
+Plugin 'maksimr/vim-jsbeautify'
 
 call vundle#end()            " vundle required
 filetype plugin indent on    " vundle required
