@@ -14,7 +14,9 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'rking/ag.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'endel/actionscript.vim'
-Plugin 'maksimr/vim-jsbeautify'
+Plugin 'scrooloose/syntastic'
+Bundle 'Chiel92/vim-autoformat'
+Bundle 'digitaltoad/vim-jade'
 
 call vundle#end()            " vundle required
 filetype plugin indent on    " vundle required
@@ -60,6 +62,14 @@ autocmd FileType ace setlocal sw=2 ts=2 sts=2
 
 " Tab width for Go files
 au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
+
+" Enable JSHint
+let g:syntastic_javascript_checkers = ['jshint']
+let JSHintUpdateWriteOnly = 1
+let g:ycm_register_as_syntastic_checker = 0
+
+"" Run Autoformat on save
+au BufWrite *.js :Autoformat
 
 " Switch between tabs easily.
 map  <C-l> :tabn<CR>
