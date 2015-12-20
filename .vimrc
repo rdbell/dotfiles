@@ -15,8 +15,10 @@ Plugin 'rking/ag.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'endel/actionscript.vim'
 Plugin 'scrooloose/syntastic'
-Bundle 'Chiel92/vim-autoformat'
-Bundle 'digitaltoad/vim-jade'
+Plugin 'Chiel92/vim-autoformat'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'maksimr/vim-jsbeautify'
+Plugin 'einars/js-beautify'
 
 call vundle#end()            " vundle required
 filetype plugin indent on    " vundle required
@@ -68,8 +70,8 @@ let g:syntastic_javascript_checkers = ['jshint']
 let JSHintUpdateWriteOnly = 1
 let g:ycm_register_as_syntastic_checker = 0
 
-"" Run Autoformat on save
-au BufWrite *.js :Autoformat
+" JSBeautify
+au BufWrite *.js :call JsBeautify()
 
 " Switch between tabs easily.
 map  <C-l> :tabn<CR>
@@ -97,3 +99,11 @@ map <leader>c :!sh -xc 'cat % \| webpaste'<CR>
 
 " Automatically close preview window after autocompletion
 let g:ycm_autoclose_preview_window_after_insertion = 1
+
+set backspace=2
+
+" CrtlP should open files in new tab by default
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<c-t>'],
+    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+    \ }

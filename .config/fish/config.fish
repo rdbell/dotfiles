@@ -26,11 +26,6 @@ set -x PATH $PATH $HOME/flex/bin # Ubuntu
 set -x JAVA_HOME /usr/lib/jvm/default-java
 set -x PLAYERGLOBAL_HOME $HOME/playerglobal
 
-# Mirra Development
-set -x MIRRA_DEV_MONGO_URL mongodb://localhost:9000
-set -x MIRRA_DEVELOPMENT true
-set -x PORT 8080
-
 # Docker
 set -x DOCKER_HOST tcp://192.168.59.103:2376
 set -x DOCKER_MACHINE_NAME default
@@ -72,3 +67,5 @@ function fish_prompt
   printf ': '
 
 end
+
+env -i HOME=$HOME dash -l -c 'export -p' | sed -e "/PATH/s/'//g;/PATH/s/:/ /g;s/=/ /;s/^export/set -x/" | source"'"
