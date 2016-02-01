@@ -19,6 +19,7 @@ Plugin 'Chiel92/vim-autoformat'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'einars/js-beautify'
+Plugin 'yosssi/vim-ace'
 
 call vundle#end()            " vundle required
 filetype plugin indent on    " vundle required

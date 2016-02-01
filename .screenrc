@@ -41,3 +41,5 @@ screen -t 'Dev'
 chdir $HOME
 screen -t 'Misc'
 screen -t 'Misc'
+
+escape ^Jj
