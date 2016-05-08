@@ -18,6 +18,9 @@ set -x PATH $PATH $HOME/git/go/bin
 set -x GOPATH $HOME/git/go-workspace
 set -x PATH $PATH $GOPATH/bin
 
+# Mirra Dev
+set -x MIRRA_DEVELOPMENT "true"
+
 # Adobe Flex
 set -x PATH $PATH /Applications/Adobe\ Flash\ Builder\ 4.7/sdks/4.6.0/bin # OS X
 set -x PATH $PATH $HOME/Library/flex_sdk_4.6/bin # OS X
@@ -25,12 +28,6 @@ set -x PATH $PATH $HOME/flex/bin # Ubuntu
 
 set -x JAVA_HOME /usr/lib/jvm/default-java
 set -x PLAYERGLOBAL_HOME $HOME/playerglobal
-
-# Docker
-set -x DOCKER_HOST tcp://192.168.59.103:2376
-set -x DOCKER_MACHINE_NAME default
-set -x DOCKER_CERT_PATH $HOME/.docker/machine/machines/default
-set -x DOCKER_TLS_VERIFY 1
 
 # Gnome keyring ssh
 # set -x SSH_AUTH_SOCK (begin; ss -xl | grep -o '/run/user/1000/keyring.*/ssh'; end)
@@ -67,5 +64,3 @@ function fish_prompt
   printf ': '
 
 end
-
-env -i HOME=$HOME dash -l -c 'export -p' | sed -e "/PATH/s/'//g;/PATH/s/:/ /g;s/=/ /;s/^export/set -x/" | source"'"
