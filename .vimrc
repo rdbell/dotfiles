@@ -20,6 +20,7 @@ Plugin 'digitaltoad/vim-jade'
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'einars/js-beautify'
 Plugin 'yosssi/vim-ace'
+Plugin 'keith/swift.vim'
 
 call vundle#end()            " vundle required
 filetype plugin indent on    " vundle required
@@ -53,8 +54,8 @@ nnoremap <leader>a :Ag
 nnoremap j gj
 nnoremap k gk
 
-" Turn off search highlight with ,<space>
-nnoremap <leader><space> :nohlsearch<CR>
+" Turn off search highlight with ctrl+n
+nnoremap <c-n> :nohlsearch<cr>
 
 " space open/closes folds
 nnoremap <space> za
@@ -110,4 +111,4 @@ let g:ctrlp_prompt_mappings = {
     \ }
 
 " NPM start
-nnoremap <C-n> :!clear && npm start<CR>
+" nnoremap <C-n> :!clear && npm start<CR>
