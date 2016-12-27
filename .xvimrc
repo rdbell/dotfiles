@@ -1,0 +1,26 @@
+set number
+set relativenumber
+set ignorecase
+set incsearch
+set hlsearch
+
+" remap leader key
+let mapleader=","
+
+" move vertically by visual line
+nnoremap j gj
+nnoremap k gk
+
+" Turn off search highlight with ,<space>
+nnoremap <c-n> :nohlsearch<cr>
+
+" space open/closes folds
+nnoremap <space> za
+
+" Switch between tabs easily.
+map  <C-l> :tabn<CR>
+map  <C-h> :tabp<CR>
+
+" Switch between horizontal splits easily.
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
