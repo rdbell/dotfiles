@@ -12,14 +12,19 @@ set -x DYLD_FORCE_FLAT_NAMESPACE 1
 set -x PATH $PATH $HOME/bin
 
 # Add go bin folder to path
-set -x PATH $PATH $HOME/git/go/bin
+set -x PATH $PATH /usr/local/go/bin
 
 # Go
+set -x GOROOT /usr/local/go
 set -x GOPATH $HOME/git/go-workspace
 set -x PATH $PATH $GOPATH/bin
 
 # Mirra Dev
 set -x MIRRA_DEVELOPMENT "true"
+
+# Lango Dev
+set -x LANGO_MONGO_HOSTS "localhost"
+set -x LANGO_DEVELOPMENT "true"
 
 # Adobe Flex
 set -x PATH $PATH /Applications/Adobe\ Flash\ Builder\ 4.7/sdks/4.6.0/bin # OS X

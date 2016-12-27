@@ -54,7 +54,7 @@ nnoremap j gj
 nnoremap k gk
 
 " Turn off search highlight with ,<space>
-nnoremap <leader><space> :nohlsearch<CR>
+nnoremap <c-n> :nohlsearch<cr>
 
 " space open/closes folds
 nnoremap <space> za
@@ -110,4 +110,4 @@ let g:ctrlp_prompt_mappings = {
     \ }
 
 " NPM start
-nnoremap <C-n> :!clear && npm start<CR>
+" nnoremap <C-n> :!clear && npm start<CR>
