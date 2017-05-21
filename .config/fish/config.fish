@@ -14,18 +14,12 @@ set -x GOPATH $HOME/git/go-workspace
 set -x PATH $PATH $GOPATH/bin
 set -x PATH $PATH $GOROOT/bin
 
-# Mirra Dev
-set -x MIRRA_DEVELOPMENT "true"
-
 # Lango Dev
 set -x LANGO_MONGO_HOSTS "localhost"
 set -x LANGO_DEVELOPMENT "true"
 
 set -x JAVA_HOME /usr/lib/jvm/default-java
 set -x PLAYERGLOBAL_HOME $HOME/playerglobal
-
-# Gnome keyring ssh
-# set -x SSH_AUTH_SOCK (begin; ss -xl | grep -o '/run/user/1000/keyring.*/ssh'; end)
 
 # Fish git prompt
 set __fish_git_prompt_showdirtystate 'yes'
