@@ -111,3 +111,7 @@ let g:ctrlp_prompt_mappings = {
 
 " NPM start
 " nnoremap <C-n> :!clear && npm start<CR>
+
+" Don't overwrite register when pasting
+xnoremap p pgvy
+
