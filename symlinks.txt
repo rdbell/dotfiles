@@ -5,3 +5,4 @@ ln -s ~/git/dotfiles/.vimrc ~/.vimrc
 ln -s ~/git/dotfiles/.vimperatorrc ~/.vimperatorrc
 ln -s ~/git/dotfiles/scripts/startup ~/bin/startup
 ln -s ~/git/dotfiles/.i3 ~/.i3
+ln -s ~/git/dotfiles/.xvimrc ~/.xvimrc

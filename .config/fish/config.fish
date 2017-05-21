@@ -8,16 +8,11 @@ set -x BROWSER open
 
 set -x DYLD_FORCE_FLAT_NAMESPACE 1
 
-# Add Scripts folder to path
-set -x PATH $PATH $HOME/bin
-
-# Add go bin folder to path
-set -x PATH $PATH /usr/local/go/bin
-
 # Go
-set -x GOROOT /usr/local/go
+set -x GOROOT /usr/local/opt/go/libexec
 set -x GOPATH $HOME/git/go-workspace
 set -x PATH $PATH $GOPATH/bin
+set -x PATH $PATH $GOROOT/bin
 
 # Mirra Dev
 set -x MIRRA_DEVELOPMENT "true"
@@ -25,11 +20,6 @@ set -x MIRRA_DEVELOPMENT "true"
 # Lango Dev
 set -x LANGO_MONGO_HOSTS "localhost"
 set -x LANGO_DEVELOPMENT "true"
-
-# Adobe Flex
-set -x PATH $PATH /Applications/Adobe\ Flash\ Builder\ 4.7/sdks/4.6.0/bin # OS X
-set -x PATH $PATH $HOME/Library/flex_sdk_4.6/bin # OS X
-set -x PATH $PATH $HOME/flex/bin # Ubuntu
 
 set -x JAVA_HOME /usr/lib/jvm/default-java
 set -x PLAYERGLOBAL_HOME $HOME/playerglobal
@@ -51,8 +41,6 @@ set __fish_git_prompt_char_upstream_ahead '↑'
 set __fish_git_prompt_char_upstream_behind '↓'
 
 set user (whoami)
-
-ssh-agent
 
 function fish_prompt
   set last_status $status
