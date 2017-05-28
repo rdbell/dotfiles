@@ -6,20 +6,11 @@ set -x BROWSER open
 # python2
 # alias python=python2
 
-set -x DYLD_FORCE_FLAT_NAMESPACE 1
-
 # Go
-set -x GOROOT /usr/local/opt/go/libexec
+set -x GOROOT /usr/lib/go-1.8
 set -x GOPATH $HOME/git/go-workspace
 set -x PATH $PATH $GOPATH/bin
 set -x PATH $PATH $GOROOT/bin
-
-# Lango Dev
-set -x LANGO_MONGO_HOSTS "localhost"
-set -x LANGO_DEVELOPMENT "true"
-
-set -x JAVA_HOME /usr/lib/jvm/default-java
-set -x PLAYERGLOBAL_HOME $HOME/playerglobal
 
 # Fish git prompt
 set __fish_git_prompt_showdirtystate 'yes'
