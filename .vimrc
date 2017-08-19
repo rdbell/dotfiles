@@ -16,7 +16,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'endel/actionscript.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'Chiel92/vim-autoformat'
-Plugin 'digitaltoad/vim-jade'
+Plugin 'digitaltoad/vim-pug'
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'einars/js-beautify'
 Plugin 'yosssi/vim-ace'
@@ -61,11 +61,18 @@ nnoremap <c-n> :nohlsearch<cr>
 nnoremap <space> za
 
 " Tab width = 2 for Jade and Ace files
-autocmd FileType jade setlocal sw=2 ts=2 sts=2
-autocmd FileType ace setlocal sw=2 ts=2 sts=2
+autocmd Filetype jade setlocal ts=4 sw=4 sts=0 expandtab
+autocmd Filetype ace setlocal ts=4 sw=4 sts=0 expandtab
+
 
 " Tab width for Go files
 au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
+
+" Disable syntax highlighting on long lines
+set synmaxcol=120
+
+" CSS Linting
+let g:syntastic_css_checkers = ['csslint']
 
 " Enable JSHint
 let g:syntastic_javascript_checkers = ['jshint']
@@ -74,10 +81,13 @@ let g:ycm_register_as_syntastic_checker = 0
 
 " JSBeautify
 au BufWrite *.js :call JsBeautify()
+au BufWrite *.json :call JsonBeautify()
+au BufWrite *.css :call CSSBeautify()
+au BufWrite *.html :call HtmlBeautify()
 
 " Switch between tabs easily.
-map  <C-l> :tabn<CR>
-map  <C-h> :tabp<CR>
+map  <C-l> gt
+map  <C-h> gT
 
 " Switch between horizontal splits easily.
 nnoremap <C-J> <C-W><C-J>
@@ -94,13 +104,19 @@ let g:go_fmt_command = "goimports"
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
-map <leader>g :GoRun<CR>
+let g:syntastic_go_checkers = ['go', 'golint', 'errcheck']
+map <leader>b :GoBuild<CR>
+map <leader>r :GoRun<CR>
 
 " Run webcopy on current file
 map <leader>c :!sh -xc 'cat % \| webpaste'<CR>
 
 " Automatically close preview window after autocompletion
 let g:ycm_autoclose_preview_window_after_insertion = 1
+
+" set ycm python path
+let g:ycm_server_python_interpreter = '/usr/bin/python'
+
 
 set backspace=2
 
@@ -111,8 +127,7 @@ let g:ctrlp_prompt_mappings = {
     \ }
 
 " NPM start
-" nnoremap <C-n> :!clear && npm start<CR>
+nnoremap <leader>j :!clear && npm start<CR>
 
 " Don't overwrite register when pasting
 xnoremap p pgvy
-

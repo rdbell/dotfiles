@@ -34,12 +34,16 @@ shell "fish"
 termcapinfo xterm* ti@:te@
 defscrollback 100000
 
-chdir $HOME/git/go-workspace/src
-screen -t 'Dev'
 chdir $HOME/git
-screen -t 'Dev'
+screen -t 'Dev1'
+chdir $HOME/git
+screen -t 'Dev2'
 chdir $HOME
 screen -t 'Misc'
 screen -t 'Misc'
+screen -t 'Misc'
+chdir $HOME/git
+screen -t 'nodemon'
+screen -t 'bsync'
 
 escape ^Jj

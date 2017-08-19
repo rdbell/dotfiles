@@ -6,6 +6,9 @@ set -x BROWSER open
 # python2
 # alias python=python2
 
+# Development
+set -x DEVELOPMENT_ENVIRONMENT true
+
 # Go
 set -x GOROOT /usr/lib/go-1.8
 set -x GOPATH $HOME/git/go-workspace
