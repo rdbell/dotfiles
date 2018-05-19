@@ -10,10 +10,12 @@ set -x BROWSER open
 set -x DEVELOPMENT_ENVIRONMENT true
 
 # Go
-set -x GOROOT /usr/lib/go-1.8
+export GOROOT=/usr/local/opt/go/libexec
 set -x GOPATH $HOME/git/go-workspace
-set -x PATH $PATH $GOPATH/bin
 set -x PATH $PATH $GOROOT/bin
+set -x PATH $PATH $GOPATH/bin
+set -x PATH $PATH $HOME/.npm-packages/bin
+set -x PATH $PATH $HOME/.npm-global/bin
 
 # Fish git prompt
 set __fish_git_prompt_showdirtystate 'yes'

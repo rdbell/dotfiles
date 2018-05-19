@@ -131,3 +131,6 @@ nnoremap <leader>j :!clear && npm start<CR>
 
 " Don't overwrite register when pasting
 xnoremap p pgvy
+
+autocmd filetype crontab setlocal nobackup nowritebackup
+
