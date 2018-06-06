@@ -1,5 +1,7 @@
 startup_message off
 
+sessionname main
+
 # terminfo and termcap for nice 256 color terminal
 # allow bold colors - necessary for some reason
 attrcolor b ".I"
@@ -34,16 +36,10 @@ shell "fish"
 termcapinfo xterm* ti@:te@
 defscrollback 100000
 
-chdir $HOME/git
-screen -t 'Dev1'
-chdir $HOME/git
-screen -t 'Dev2'
 chdir $HOME
-screen -t 'Misc'
-screen -t 'Misc'
-screen -t 'Misc'
-chdir $HOME/git
-screen -t 'nodemon'
-screen -t 'bsync'
+screen -t
+screen -t
+screen -t
+screen -t
 
 escape ^Jj

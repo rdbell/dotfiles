@@ -3,6 +3,8 @@ set fish_greeting ""
 set -x EDITOR vim
 set -x BROWSER open
 
+set -x TERM screen-256color
+
 # python2
 # alias python=python2
 
@@ -10,7 +12,7 @@ set -x BROWSER open
 set -x DEVELOPMENT_ENVIRONMENT true
 
 # Go
-export GOROOT=/usr/local/opt/go/libexec
+export GOROOT=/usr/lib/go-1.10
 set -x GOPATH $HOME/git/go-workspace
 set -x PATH $PATH $GOROOT/bin
 set -x PATH $PATH $GOPATH/bin
