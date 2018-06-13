@@ -21,6 +21,7 @@ Plugin 'maksimr/vim-jsbeautify'
 Plugin 'einars/js-beautify'
 Plugin 'yosssi/vim-ace'
 Plugin 'keith/swift.vim'
+Plugin 'OmniSharp/omnisharp-vim'
 
 call vundle#end()            " vundle required
 filetype plugin indent on    " vundle required
