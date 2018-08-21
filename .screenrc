@@ -36,6 +36,9 @@ shell "fish"
 termcapinfo xterm* ti@:te@
 defscrollback 100000
 
+# resizable
+checkwinsize on
+
 chdir $HOME
 screen -t
 screen -t

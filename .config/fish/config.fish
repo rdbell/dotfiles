@@ -12,12 +12,14 @@ set -x TERM screen-256color
 set -x DEVELOPMENT_ENVIRONMENT true
 
 # Go
-export GOROOT=/usr/lib/go-1.10
+export GOROOT=/usr/lib/go
 set -x GOPATH $HOME/git/go-workspace
 set -x PATH $PATH $GOROOT/bin
 set -x PATH $PATH $GOPATH/bin
-set -x PATH $PATH $HOME/.npm-packages/bin
-set -x PATH $PATH $HOME/.npm-global/bin
+
+# npm
+#set -x PATH $PATH $HOME/.npm-packages/bin
+#set -x PATH $PATH $HOME/.npm-global/bin
 
 # Fish git prompt
 set __fish_git_prompt_showdirtystate 'yes'
