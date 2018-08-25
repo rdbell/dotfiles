@@ -24,6 +24,7 @@ Plugin 'keith/swift.vim'
 Plugin 'OmniSharp/omnisharp-vim'
 Plugin 'slashmili/alchemist.vim'
 
+
 call vundle#end()            " vundle required
 filetype plugin indent on    " vundle required
 
@@ -87,6 +88,10 @@ au BufWrite *.json :call JsonBeautify()
 au BufWrite *.css :call CSSBeautify()
 au BufWrite *.html :call HtmlBeautify()
 
+" Indenting for yaml
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+
 " Switch between tabs easily.
 map  <C-l> gt
 map  <C-h> gT
@@ -109,6 +114,7 @@ let g:go_highlight_structs = 1
 let g:syntastic_go_checkers = ['go', 'golint', 'errcheck']
 map <leader>b :GoBuild<CR>
 map <leader>r :GoRun<CR>
+map <leader>d :GoDef<CR>
 
 " Run webcopy on current file
 map <leader>c :!sh -xc 'cat % \| webpaste'<CR>
