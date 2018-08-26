@@ -54,7 +54,7 @@ export editor vim
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Disable autocorrect
-#unsetopt correct_all
+unsetopt correct_all
 
 # Vi Mode
 bindkey -v
