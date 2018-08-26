@@ -40,13 +40,6 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_STRATEGY=match_prev_cmd
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=blue'
 
-# Smart autocomplete
-autoload -Uz {up,down}-line-or-beginning-search
-zle -N up-line-or-beginning-search
-zle -N down-line-or-beginning-search
-bindkey '${terminfo[kcuu1]}' up-line-or-beginning-search
-bindkey '${terminfo[kcud1]}' down-line-or-beginning-search
-
 # Editor
 export editor vim
 
@@ -70,5 +63,12 @@ zle -N zle-keymap-select
 
 export KEYTIMEOUT=1
 
-# should be the last list in zshrc
+# Smart history substring autocomplete
+source ~/.oh-my-zsh/custom/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
+
+# Syntax highlighting - keep at the end of zshrc
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
