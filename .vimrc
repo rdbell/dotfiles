@@ -11,7 +11,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'fatih/vim-go'
 Plugin 'Raimondi/delimitMate'
-Plugin 'rking/ag.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'endel/actionscript.vim'
 Plugin 'scrooloose/syntastic'
@@ -22,8 +21,9 @@ Plugin 'einars/js-beautify'
 Plugin 'yosssi/vim-ace'
 Plugin 'keith/swift.vim'
 Plugin 'OmniSharp/omnisharp-vim'
+Plugin 'elixir-editors/vim-elixir'
 Plugin 'slashmili/alchemist.vim'
-
+Plugin 'vim-airline/vim-airline'
 
 call vundle#end()            " vundle required
 filetype plugin indent on    " vundle required
