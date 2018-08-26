@@ -24,6 +24,8 @@ Plugin 'OmniSharp/omnisharp-vim'
 Plugin 'elixir-editors/vim-elixir'
 Plugin 'slashmili/alchemist.vim'
 Plugin 'vim-airline/vim-airline'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
 
 call vundle#end()            " vundle required
 filetype plugin indent on    " vundle required
@@ -90,6 +92,10 @@ au BufWrite *.html :call HtmlBeautify()
 
 " Indenting for yaml
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+" Nerdtree tabs
+let g:nerdtree_tabs_open_on_console_startup = 1
+let g:NERDTreeWinPos = "right"
 
 
 " Switch between tabs easily.
