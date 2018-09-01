@@ -6,7 +6,11 @@ export PATH="$HOME/Library/Python/2.7/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 # Go
-export GOROOT="/usr/local/opt/go/libexec"
+if [[ `uname` == 'Linux' ]]; then
+    export GOROOT="/usr/lib/go-1.10"
+elif [[ `uname` == 'Darwin' ]]; then
+    export GOROOT="/usr/local/opt/go/libexec/"
+fi
 export GOPATH="$HOME/git/go-workspace"
 export PATH="$GOPATH/bin:$PATH"
 export PATH"=$GOROOT/bin:$PATH"
@@ -14,6 +18,7 @@ export PATH"=$GOROOT/bin:$PATH"
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
+# Theme
 ZSH_THEME="bira"
 
 # Hyphen-insensitive completion
@@ -21,7 +26,11 @@ HYPHEN_INSENSITIVE="true"
 
 # Manage Oh-My-Zsh plugins with Antigen
 source $ZSH/oh-my-zsh.sh
-source $(brew --prefix)/share/antigen/antigen.zsh
+if [[ `uname` == 'Linux' ]]; then
+    source $HOME/.zsh/antigen.zsh
+elif [[ `uname` == 'Darwin' ]]; then
+    source $(brew --prefix)/share/antigen/antigen.zsh
+fi
 
 antigen use oh-my-zsh
 
@@ -71,4 +80,4 @@ bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
 # Syntax highlighting - keep at the end of zshrc
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
