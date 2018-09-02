@@ -7,7 +7,11 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # Go
 if [[ `uname` == 'Linux' ]]; then
-    export GOROOT="/usr/lib/go-1.10"
+    if [[ $(uname -r | grep ARCH) ]]; then
+        export GOROOT="/usr/lib/go"
+    else
+        #export GOROOT="/usr/lib/go-1.10"
+    fi
 elif [[ `uname` == 'Darwin' ]]; then
     export GOROOT="/usr/local/opt/go/libexec/"
 fi
@@ -43,6 +47,7 @@ antigen bundle python
 antigen bundle osx
 antigen bundle powershell
 antigen bundle zsh-autosuggestions
+antigen apply
 
 # Auto suggesions
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
