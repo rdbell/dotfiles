@@ -26,6 +26,7 @@ Plugin 'slashmili/alchemist.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'mhinz/vim-mix-format'
 
 call vundle#end()            " vundle required
 filetype plugin indent on    " vundle required
@@ -100,10 +101,12 @@ au BufWrite *.html :call HtmlBeautify()
 " Indenting for yaml
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
+" Mix format on save
+let g:mix_format_on_save = 1
+
 " Nerdtree tabs
 let g:nerdtree_tabs_open_on_console_startup = 1
 let g:NERDTreeWinPos = "right"
-
 
 " Switch between tabs easily.
 map  <C-l> gt
