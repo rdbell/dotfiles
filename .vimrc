@@ -52,6 +52,12 @@ set foldmethod=indent   " fold based on indent level
 " remap leader key
 let mapleader=","
 
+" easier indentation
+nnoremap > >>
+nnoremap < <<
+vnoremap > >gv
+vnoremap < <gv
+
 " shortcut for Ag
 nnoremap <leader>a :Ag
 
@@ -66,15 +72,16 @@ nnoremap <c-n> :nohlsearch<cr>
 nnoremap <space> za
 
 " Tab width = 2 for Jade and Ace files
-autocmd Filetype jade setlocal ts=4 sw=4 sts=0 expandtab
-autocmd Filetype ace setlocal ts=4 sw=4 sts=0 expandtab
+autocmd Filetype jade setlocal ts=2 sw=2 sts=0 expandtab
+autocmd Filetype pug setlocal ts=2 sw=2 sts=0 expandtab
+autocmd Filetype ace setlocal ts=2 sw=2 sts=0 expandtab
 
 
 " Tab width for Go files
 au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
 
 " Disable syntax highlighting on long lines
-set synmaxcol=120
+set synmaxcol=240
 
 " CSS Linting
 let g:syntastic_css_checkers = ['csslint']
