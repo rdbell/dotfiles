@@ -24,9 +24,10 @@ Plugin 'OmniSharp/omnisharp-vim'
 Plugin 'elixir-editors/vim-elixir'
 Plugin 'slashmili/alchemist.vim'
 Plugin 'vim-airline/vim-airline'
-Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
+"Plugin 'scrooloose/nerdtree'
+"Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'mhinz/vim-mix-format'
+Plugin 'rking/ag.vim'
 
 call vundle#end()            " vundle required
 filetype plugin indent on    " vundle required
@@ -105,8 +106,8 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 let g:mix_format_on_save = 1
 
 " Nerdtree tabs
-let g:nerdtree_tabs_open_on_console_startup = 1
-let g:NERDTreeWinPos = "right"
+"let g:nerdtree_tabs_open_on_console_startup = 1
+"let g:NERDTreeWinPos = "right"
 
 " Switch between tabs easily.
 map  <C-l> gt
