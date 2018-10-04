@@ -39,14 +39,16 @@ fi
 antigen use oh-my-zsh
 
 # Plugins
-antigen bundle git
-antigen bundle node
-antigen bundle npm
-antigen bundle pip
-antigen bundle python
-antigen bundle osx
-antigen bundle powershell
-antigen bundle zsh-autosuggestions
+antigen bundles <<EOBUNDLES
+    git
+    node
+    npm
+    pip
+    python
+    osx
+    powershell
+    zsh-autosuggestions
+EOBUNDLES
 antigen apply
 
 # Auto suggesions
