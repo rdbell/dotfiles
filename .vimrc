@@ -2,6 +2,8 @@
 set nocompatible
 filetype off
 
+set term=builtin_ansi
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -34,9 +36,9 @@ filetype plugin indent on    " vundle required
 
 syntax enable 		    " enable syntax processing
 set shell=/bin/bash     " override fish shell
-set tabstop=4 	        " number of spaces to show per-tab
-set softtabstop=4	    " number of spaces in tab when editing
-set shiftwidth=4	    " number of spaces in tab when editing
+set tabstop=2 	        " number of spaces to show per-tab
+set softtabstop=2	    " number of spaces in tab when editing
+set shiftwidth=2	    " number of spaces in tab when editing
 set expandtab       	" tabs are spaces
 set number		        " enable line numbers
 set relativenumber	    " enable relative line numbers
@@ -85,16 +87,16 @@ au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
 " Disable syntax highlighting on long lines
 set synmaxcol=240
 
+" AirBNB ESLint
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_args = ['--fix']
+set autoread
+au VimEnter *.js au BufWritePost *.js checktime
+
 " CSS Linting
 let g:syntastic_css_checkers = ['csslint']
 
-" Enable JSHint
-let g:syntastic_javascript_checkers = ['jshint']
-let JSHintUpdateWriteOnly = 1
-let g:ycm_register_as_syntastic_checker = 0
-
-" JSBeautify
-au BufWrite *.js :call JsBeautify()
+" JSON/CSS/HTML Beautify
 au BufWrite *.json :call JsonBeautify()
 au BufWrite *.css :call CSSBeautify()
 au BufWrite *.html :call HtmlBeautify()
@@ -121,7 +123,11 @@ nnoremap <C-K> <C-W><C-K>
 let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_switch_buffer = 0
 let g:ctrlp_working_path_mode = 0
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+" let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|tmp$\|node_modules\|vendor',
+  \ 'file': '\.exe$\|\.so$\|\.dat$'
+  \ }
 
 " Go specific settings
 let g:go_fmt_command = "goimports"
