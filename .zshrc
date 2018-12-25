@@ -19,6 +19,9 @@ export GOPATH="$HOME/git/go-workspace"
 export PATH="$GOPATH/bin:$PATH"
 export PATH"=$GOROOT/bin:$PATH"
 
+# Java 8
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -88,3 +91,7 @@ bindkey -M vicmd 'j' history-substring-search-down
 
 # Syntax highlighting - keep at the end of zshrc
 source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

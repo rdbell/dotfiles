@@ -164,3 +164,5 @@ nnoremap <leader>j :!clear && npm start<CR>
 xnoremap p pgvy
 
 autocmd filetype crontab setlocal nobackup nowritebackup
+
+colorscheme ron
