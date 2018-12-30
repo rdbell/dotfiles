@@ -146,7 +146,7 @@ map <leader>c :!sh -xc 'cat % \| webpaste'<CR>
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " set ycm python path
-let g:ycm_server_python_interpreter = '/usr/bin/python'
+let g:ycm_server_python_interpreter = '/usr/bin/python3'
 
 
 set backspace=2

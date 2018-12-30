@@ -10,7 +10,7 @@ if [[ `uname` == 'Linux' ]]; then
     if [[ $(uname -r | grep ARCH) ]]; then
         export GOROOT="/usr/lib/go"
     else
-        #export GOROOT="/usr/lib/go-1.10"
+        export GOROOT="/usr/local/go"
     fi
 elif [[ `uname` == 'Darwin' ]]; then
     export GOROOT="/usr/local/opt/go/libexec/"
@@ -19,14 +19,16 @@ export GOPATH="$HOME/git/go-workspace"
 export PATH="$GOPATH/bin:$PATH"
 export PATH"=$GOROOT/bin:$PATH"
 
-# Java 8
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+# Spark
+#export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export SPARK_HOME=/opt/spark
+export PATH=$SPARK_HOME/bin:$PATH
 
 # Theme
 ZSH_THEME="bira"
+
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
 
 # Hyphen-insensitive completion
 HYPHEN_INSENSITIVE="true"
