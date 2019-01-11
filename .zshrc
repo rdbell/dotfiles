@@ -1,3 +1,5 @@
+export TERM=xterm-256color
+
 # Home binaries
 export PATH=$HOME/bin:$PATH
 
@@ -24,11 +26,12 @@ export PATH"=$GOROOT/bin:$PATH"
 export SPARK_HOME=/opt/spark
 export PATH=$SPARK_HOME/bin:$PATH
 
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
+
 # Theme
 ZSH_THEME="bira"
 
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
 
 # Hyphen-insensitive completion
 HYPHEN_INSENSITIVE="true"
@@ -97,3 +100,9 @@ source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/zsh-sy
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/private/tmp/google-cloud-sdk/path.zsh.inc' ]; then . '/private/tmp/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/private/tmp/google-cloud-sdk/completion.zsh.inc' ]; then . '/private/tmp/google-cloud-sdk/completion.zsh.inc'; fi

@@ -2,7 +2,7 @@
 set nocompatible
 filetype off
 
-set term=builtin_ansi
+"set term=builtin_ansi
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -79,7 +79,8 @@ nnoremap <space> za
 autocmd Filetype jade setlocal ts=2 sw=2 sts=0 expandtab
 autocmd Filetype pug setlocal ts=2 sw=2 sts=0 expandtab
 autocmd Filetype ace setlocal ts=2 sw=2 sts=0 expandtab
-
+autocmd Filetype ace setlocal ts=2 sw=2 sts=0 expandtab
+autocmd FileType html,html.tmpl,gohtml setlocal ts=2 sw=2 expandtab
 
 " Tab width for Go files
 au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
@@ -100,6 +101,7 @@ let g:syntastic_css_checkers = ['csslint']
 au BufWrite *.json :call JsonBeautify()
 au BufWrite *.css :call CSSBeautify()
 au BufWrite *.html :call HtmlBeautify()
+au BufWrite *.html.tmpl :call HtmlBeautify()
 
 " Indenting for yaml
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
@@ -146,8 +148,19 @@ map <leader>c :!sh -xc 'cat % \| webpaste'<CR>
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " set ycm python path
-let g:ycm_server_python_interpreter = '/usr/bin/python3'
+"let g:ycm_server_python_interpreter = '/usr/bin/python3'
+"let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
+let g:ycm_server_python_interpreter = '/usr/local/bin/python'
+if has('nvim')
+  let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
+endif
 
+" YCM Go
+let g:ycm_gocode_binary_path = "$GOPATH/bin/gocode"
+let g:ycm_godef_binary_path = "$GOPATH/bin/godef"
+
+" Don't complete strings (slows down vim with go files)
+let g:ycm_complete_in_strings = 0
 
 set backspace=2
 

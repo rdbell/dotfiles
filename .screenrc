@@ -1,6 +1,7 @@
 startup_message off
 
 sessionname main
+utf8 on
 
 # terminfo and termcap for nice 256 color terminal
 # allow bold colors - necessary for some reason
@@ -27,7 +28,7 @@ altscreen on
 # 
 
 # tell screen how to set colors. AB = background, AF=foreground
-#termcapinfo xterm-256color 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+termcapinfo xterm-256color 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
 
 # Default Shell
 shell "zsh"
