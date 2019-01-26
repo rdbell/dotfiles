@@ -22,8 +22,8 @@ export PATH="$GOPATH/bin:$PATH"
 export PATH"=$GOROOT/bin:$PATH"
 
 # Spark
-#export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-export SPARK_HOME=/opt/spark
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export SPARK_HOME=/usr/local/Cellar/apache-spark/2.4.0/libexec
 export PATH=$SPARK_HOME/bin:$PATH
 
 # Path to your oh-my-zsh installation.
@@ -106,3 +106,8 @@ if [ -f '/private/tmp/google-cloud-sdk/path.zsh.inc' ]; then . '/private/tmp/goo
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/private/tmp/google-cloud-sdk/completion.zsh.inc' ]; then . '/private/tmp/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Aliases
+alias vim="nvim"
+alias vi="nvim"
+alias v="nvim"

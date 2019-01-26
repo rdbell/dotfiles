@@ -20,6 +20,9 @@ nonblock on
 # rather than leaving existing text in place
 altscreen on
 
+# vim ESC key fix
+maptimeout 5
+
 # Enable 256-color mode when screen is started with TERM=xterm-256color
 # Taken from: http://frexx.de/xterm-256-notes/
 #
@@ -41,9 +44,14 @@ defscrollback 100000
 checkwinsize on
 
 chdir $HOME
+stuff "source ~/.zshrc"
 screen -t
+stuff "source ~/.zshrc"
 screen -t
+stuff "source ~/.zshrc"
 screen -t
+stuff "source ~/.zshrc"
 screen -t
+stuff "source ~/.zshrc"
 
 escape ^Jj

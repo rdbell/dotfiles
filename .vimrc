@@ -13,7 +13,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'fatih/vim-go'
 Plugin 'Raimondi/delimitMate'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'endel/actionscript.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'Chiel92/vim-autoformat'
@@ -31,11 +31,26 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'mhinz/vim-mix-format'
 Plugin 'rking/ag.vim'
 
+" vim-plug
+call plug#begin()
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+call plug#end()
+
+let g:deoplete#enable_at_startup = 1
+" deoplete <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
 call vundle#end()            " vundle required
 filetype plugin indent on    " vundle required
 
 syntax enable 		    " enable syntax processing
-set shell=/bin/bash     " override fish shell
+set shell=/bin/bash     " override zsh
 set tabstop=2 	        " number of spaces to show per-tab
 set softtabstop=2	    " number of spaces in tab when editing
 set shiftwidth=2	    " number of spaces in tab when editing
@@ -114,8 +129,8 @@ let g:mix_format_on_save = 1
 "let g:NERDTreeWinPos = "right"
 
 " Switch between tabs easily.
-map  <C-l> gt
-map  <C-h> gT
+" map <C-l> gt
+" map <C-h> gT
 
 " Switch between horizontal splits easily.
 nnoremap <C-J> <C-W><C-J>
@@ -138,7 +153,8 @@ let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:syntastic_go_checkers = ['go', 'golint', 'errcheck']
 map <leader>b :GoBuild<CR>
-map <leader>r :GoRun<CR>
+"map <leader>r :GoRun<CR>
+map <leader>r :60split<CR><C-w>j:terminal gomon .<CR><C-w>k
 map <leader>d :GoDef<CR>
 
 " Run webcopy on current file
@@ -155,6 +171,12 @@ if has('nvim')
   let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
 endif
 
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+
 " YCM Go
 let g:ycm_gocode_binary_path = "$GOPATH/bin/gocode"
 let g:ycm_godef_binary_path = "$GOPATH/bin/godef"
@@ -164,12 +186,6 @@ let g:ycm_complete_in_strings = 0
 
 set backspace=2
 
-" CrtlP should open files in new tab by default
-let g:ctrlp_prompt_mappings = {
-    \ 'AcceptSelection("e")': ['<c-t>'],
-    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
-    \ }
-
 " NPM start
 nnoremap <leader>j :!clear && npm start<CR>
 
@@ -177,5 +193,26 @@ nnoremap <leader>j :!clear && npm start<CR>
 xnoremap p pgvy
 
 autocmd filetype crontab setlocal nobackup nowritebackup
+
+if has('nvim')
+  " Terminal escape
+  :tnoremap <Esc> <C-\><C-n>
+endif
+
+" This allows buffers to be hidden if you've modified a buffer.
+set hidden
+
+" To open a new empty buffer
+" This replaces :tabnew
+"nmap <leader>t :enew<cr>
+
+" Move to the next buffer
+nmap <C-l> :bnext<CR>
+
+" Move to the previous buffer
+nmap <C-h> :bprevious<CR>
+
+" Open :badd prompt with <C-t>
+nnoremap <leader>t :badd
 
 colorscheme ron
