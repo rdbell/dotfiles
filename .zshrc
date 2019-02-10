@@ -111,3 +111,4 @@ if [ -f '/private/tmp/google-cloud-sdk/completion.zsh.inc' ]; then . '/private/t
 alias vim="nvim"
 alias vi="nvim"
 alias v="nvim"
+alias pk="KUBECONFIG=~/.kube/config-ps kubectl"

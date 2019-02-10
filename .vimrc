@@ -32,15 +32,14 @@ Plugin 'mhinz/vim-mix-format'
 Plugin 'rking/ag.vim'
 
 " vim-plug
-call plug#begin()
 if has('nvim')
+  call plug#begin()
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
   Plug 'Shougo/deoplete.nvim'
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
+  call plug#end()
 endif
-call plug#end()
 
 let g:deoplete#enable_at_startup = 1
 " deoplete <TAB>: completion.
