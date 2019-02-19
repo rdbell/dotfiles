@@ -29,10 +29,6 @@ export PATH=$SPARK_HOME/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-# Theme
-ZSH_THEME="bira"
-
-
 # Hyphen-insensitive completion
 HYPHEN_INSENSITIVE="true"
 
@@ -43,6 +39,11 @@ if [[ `uname` == 'Linux' ]]; then
 elif [[ `uname` == 'Darwin' ]]; then
     source $(brew --prefix)/share/antigen/antigen.zsh
 fi
+
+
+# Theme
+#ZSH_THEME="bira"
+ZSH_THEME="spaceship"
 
 antigen use oh-my-zsh
 
@@ -112,3 +113,4 @@ alias vim="nvim"
 alias vi="nvim"
 alias v="nvim"
 alias pk="KUBECONFIG=~/.kube/config-ps kubectl"
+alias ce="cd ~/git/go-workspace/src/gitlab.com/packetstream/ecosystem"

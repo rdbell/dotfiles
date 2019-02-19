@@ -53,5 +53,13 @@ screen -t
 stuff "source ~/.zshrc"
 screen -t
 stuff "source ~/.zshrc"
+screen -t
+stuff "source ~/.zshrc"
+screen -t
+stuff "source ~/.zshrc"
+screen -t
+stuff "source ~/.zshrc"
+screen -t
+stuff "source ~/.zshrc"
 
 escape ^Jj
