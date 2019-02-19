@@ -44,22 +44,13 @@ defscrollback 100000
 checkwinsize on
 
 chdir $HOME
-stuff "source ~/.zshrc"
 screen -t
-stuff "source ~/.zshrc"
 screen -t
-stuff "source ~/.zshrc"
 screen -t
-stuff "source ~/.zshrc"
 screen -t
-stuff "source ~/.zshrc"
 screen -t
-stuff "source ~/.zshrc"
 screen -t
-stuff "source ~/.zshrc"
 screen -t
-stuff "source ~/.zshrc"
 screen -t
-stuff "source ~/.zshrc"
 
 escape ^Jj
