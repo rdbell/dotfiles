@@ -7,6 +7,9 @@ export PATH=$HOME/bin:$PATH
 export PATH="$HOME/Library/Python/2.7/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
+export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
+export ANDROID_HOME="/usr/local/share/android-sdk"
+
 # Go
 if [[ `uname` == 'Linux' ]]; then
     if [[ $(uname -r | grep ARCH) ]]; then
@@ -91,6 +94,8 @@ export KEYTIMEOUT=1
 source ~/.oh-my-zsh/custom/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+bindkey '^[OA' history-substring-search-up
+bindkey '^[OB' history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
@@ -111,5 +116,15 @@ if [ -f '/private/tmp/google-cloud-sdk/completion.zsh.inc' ]; then . '/private/t
 alias vim="nvim"
 alias vi="nvim"
 alias v="nvim"
-alias pk="KUBECONFIG=~/.kube/config-ps kubectl"
+alias kp="KUBECONFIG=~/.kube/config-ps-prod kubectl"
+alias ks="KUBECONFIG=~/.kube/config-ps-staging kubectl"
 alias ce="cd ~/git/go-workspace/src/gitlab.com/packetstream/ecosystem"
+
+capture() {
+    sudo dtrace -p "$1" -qn '
+        syscall::write*:entry
+        /pid == $target && arg0 == 1/ {
+            printf("%s", copyinstr(arg1, arg2));
+        }
+    '
+}
