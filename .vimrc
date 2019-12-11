@@ -30,6 +30,7 @@ Plugin 'vim-airline/vim-airline'
 "Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'mhinz/vim-mix-format'
 Plugin 'rking/ag.vim'
+Plugin 'jodosha/vim-godebug'
 
 " vim-plug
 if has('nvim')
