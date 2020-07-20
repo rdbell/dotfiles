@@ -95,13 +95,13 @@ autocmd Filetype jade setlocal ts=2 sw=2 sts=0 expandtab
 autocmd Filetype pug setlocal ts=2 sw=2 sts=0 expandtab
 autocmd Filetype ace setlocal ts=2 sw=2 sts=0 expandtab
 autocmd Filetype ace setlocal ts=2 sw=2 sts=0 expandtab
-autocmd FileType html,html.tmpl,gohtml setlocal ts=2 sw=2 expandtab
+" autocmd FileType html,html.tmpl,gohtml setlocal ts=2 sw=2 expandtab
 
 " Tab width for Go files
 au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
 
 " Disable syntax highlighting on long lines
-set synmaxcol=240
+set synmaxcol=440
 
 " AirBNB ESLint
 let g:syntastic_javascript_checkers = ['eslint']
@@ -116,7 +116,7 @@ let g:syntastic_css_checkers = ['csslint']
 au BufWrite *.json :call JsonBeautify()
 au BufWrite *.css :call CSSBeautify()
 au BufWrite *.html :call HtmlBeautify()
-au BufWrite *.html.tmpl :call HtmlBeautify()
+" au BufWrite *.html.tmpl :call HtmlBeautify()
 
 " Indenting for yaml
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
@@ -140,6 +140,8 @@ nnoremap <C-K> <C-W><C-K>
 let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_switch_buffer = 0
 let g:ctrlp_working_path_mode = 0
+let g:ctrlp_max_files = ''
+let g:ctrlp_max_depth=40
 " let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|tmp$\|node_modules\|vendor',

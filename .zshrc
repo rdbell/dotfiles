@@ -15,7 +15,7 @@ if [[ `uname` == 'Linux' ]]; then
     if [[ $(uname -r | grep ARCH) ]]; then
         export GOROOT="/usr/lib/go"
     else
-        export GOROOT="/usr/local/go"
+        export GOROOT="/usr/lib/go-1.14"
     fi
 elif [[ `uname` == 'Darwin' ]]; then
     export GOROOT="/usr/local/opt/go/libexec/"
@@ -25,9 +25,9 @@ export PATH="$GOPATH/bin:$PATH"
 export PATH"=$GOROOT/bin:$PATH"
 
 # Spark
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-export SPARK_HOME=/usr/local/Cellar/apache-spark/2.4.0/libexec
-export PATH=$SPARK_HOME/bin:$PATH
+#export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+#export SPARK_HOME=/usr/local/Cellar/apache-spark/2.4.0/libexec
+#export PATH=$SPARK_HOME/bin:$PATH
 
 # Theme
 ZSH_THEME="spaceship"
@@ -119,6 +119,8 @@ alias v="nvim"
 alias kp="KUBECONFIG=~/.kube/config-ps-prod kubectl"
 alias ks="KUBECONFIG=~/.kube/config-ps-staging kubectl"
 alias ce="cd ~/git/go-workspace/src/gitlab.com/packetstream/ecosystem"
+alias co="cd ~/git/go-workspace/src/gitlab.com/omegaxi/ecosystem"
+alias octl="AWS_PROFILE=omega kubectl"
 
 capture() {
     sudo dtrace -p "$1" -qn '
